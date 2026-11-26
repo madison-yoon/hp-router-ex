@@ -112,7 +112,18 @@ const Login = () => {
         </Button>
         <KakaoBtn
           type="button"
-          onClick={() => (window.location.href = KAKAO_AUTH_URL)}
+          onClick={() => {
+            console.log("카카오 로그인 버튼 클릭");
+
+            console.log("KAKAO_AUTH_URL:", KAKAO_AUTH_URL);
+            console.log("CLIENT_ID:", process.env.REACT_APP_KAKAO_CLIENT_ID);
+            console.log(
+              "REDIRECT_URI:",
+              process.env.REACT_APP_KAKAO_REDIRECT_URI,
+            );
+
+            window.location.assign(KAKAO_AUTH_URL);
+          }}
         >
           카카오 로그인
         </KakaoBtn>
